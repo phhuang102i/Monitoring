@@ -3,10 +3,10 @@ Generic module to demonstrate simple patterns for celery tasks.
 """
 from app import app
 from celery import Signature
-RABBITMQ_USER = 'omnisegment'
-RABBITMQ_PWD = 'symp5674xnbpvp6wngn6z8hfppc3cefp'
-RABBITMQ_HOST = 'localhost:15672'
-SLACK_WEBHOOK_URL = 'https://hooks.slack.com/services/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'
+RABBITMQ_USER = ''
+RABBITMQ_PWD = ''
+RABBITMQ_HOST = ''
+SLACK_WEBHOOK_URL = ''
 
 
 @app.task
