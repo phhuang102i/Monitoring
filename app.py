@@ -1,4 +1,5 @@
 from celery import Celery
+from celery.schedules import crontab
 
 app = Celery('tasks', broker='redis://localhost')
 
@@ -7,9 +8,10 @@ app.conf.imports = (
 )
 
 app.conf.beat_schedule = {
-    'check-queue-every-30-seconds': {
-        'task': 'foo.tasks.check_queue_every_30_seconds',
-        'schedule': 30.0,
+    'check-queue-every-5-mins': {
+        'task': 'foo.tasks.check_queue_every_5_mins',
+        'schedule': crontab(minute='*/5',
+                            hour='1-15'),
         'args': ()
     },
 }
