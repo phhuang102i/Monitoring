@@ -32,6 +32,7 @@ $ celery -A app worker --loglevel info
                 .> celery           exchange=celery(direct) key=celery
                 
 
-```
 $ celery -A app beat --loglevel info
+```
+
 
